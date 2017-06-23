@@ -16,7 +16,8 @@ print data.describe()
 
 
 # Scatter plot.
-X = dataset.data[:, :2]  # we only take the first two features.
+# Notar que dataset.data es un numpy.ndarray con shape (150, 4)
+X = dataset.data[:, :2]  # solo queremos las primeras dos columnas.
 Y = dataset.target
 
 # Crear figura.
