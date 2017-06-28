@@ -21,7 +21,7 @@ X = dataset.data[:, 2:4]  # solo queremos las ultimas dos columnas.
 Y = dataset.target
 
 # Crear figura.
-title = "Sepal Scatter Plot"
+title = "Petal Scatter Plot"
 plt.figure(title, figsize=(8, 6))
 
 # Crear scatter plot.
