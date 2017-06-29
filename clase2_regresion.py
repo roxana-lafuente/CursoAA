@@ -1,4 +1,5 @@
 from sklearn.datasets import load_boston
+from statsmodels.api import add_constant, OLS
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -34,8 +35,19 @@ boston['MEDV'] = dataset.target
 # Ingenieria de caracteristicas: seleccion
 print boston.corr(method='pearson')
 
+# Seleccionar que atributos usar en la regresion
+X = add_constant(boston['LSTAT'])
+y = boston['MEDV']
+
+# Regresion
+model = OLS(y, X)
+model = model.fit()
+theta = model.params
+
+print "Theta:\n", theta
+
 # Prepare plots.
-fig, ax = plt.subplots(figsize=(12,8))
+fig, ax = plt.subplots(figsize=(12, 8))
 
 # Scatter plot.
 ax.scatter(boston['MEDV'], boston['LSTAT'], label='Dataset', color='Cyan')
