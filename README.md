@@ -11,6 +11,5 @@ Imprimir el **scatter plot** para el ancho y la longitud del pétalo de la flor 
 
 ### Clase 2: Aprendizaje supervisado
 
-#### Ejemplo:
-En **clase2_.py**
+Más detalles pronto.
 
