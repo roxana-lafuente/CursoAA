@@ -50,7 +50,7 @@ Z = Z.reshape(xx.shape)
 plt.pcolormesh(xx, yy, Z, cmap=plt.cm.Paired)
 
 # Crear scatter plot sobre los limites de decision.
-plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Paired)
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Oranges)
 
 # Nombrar los ejes para entender mejor la figura.
 plt.xlabel('Sepal length')
