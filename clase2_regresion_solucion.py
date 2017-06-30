@@ -65,9 +65,9 @@ x = np.linspace(X.min(), X.max(), len(X))
 ax.plot(x, model.predict(add_constant(x)), 'r', label='OLS', color='Green')
 
 # Plot settings.
-ax.set_xlabel('log(LSTAT)')
+ax.set_xlabel('LSTAT')
 ax.set_ylabel('log(MEDV)')
-ax.set_title("log(MEDV) vs log(LSTAT)")
+ax.set_title("log(MEDV) vs LSTAT")
 ax.legend()
 
 
