@@ -33,18 +33,18 @@ boston = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 boston['MEDV'] = dataset.target
 
 # Ingenieria de caracteristicas: seleccion
-print boston.corr(method='pearson')
+# print boston.corr(method='pearson')
 
 # Seleccionar que atributos usar en la regresion
-X = add_constant(boston['LSTAT'])
+X = boston['LSTAT']
 y = boston['MEDV']
 
 # Regresion
-model = OLS(y, X)
+model = OLS(y, add_constant(X))
 model = model.fit()
 theta = model.params
 
-print "Theta:\n", theta
+print "Estimated parameters:\n", theta
 
 # Prepare plots.
 fig, ax = plt.subplots(figsize=(12, 8))
@@ -52,6 +52,9 @@ fig, ax = plt.subplots(figsize=(12, 8))
 # Scatter plot.
 ax.scatter(boston['MEDV'], boston['LSTAT'], label='Dataset', color='Cyan')
 
+# Mostrar la regresion lineal.
+x = np.linspace(X.min(), X.max(), len(X))
+ax.plot(x, model.predict(add_constant(x)), 'r', label='OLS', color='Green')
 
 # Plot settings.
 ax.set_xlabel('LSTAT')
