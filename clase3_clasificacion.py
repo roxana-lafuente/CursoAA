@@ -23,7 +23,7 @@ title = "Sepal Scatter Plot"
 plt.figure(title, figsize=(8, 6))
 
 # Clasificacion - Creamos una instancia del clasificador Logistic Regression
-model = LogisticRegression(C=1e5)
+model = LogisticRegression(C=1e5, multi_class='ovr')
 
 # Entrenamos nuestro clasificador con len(X) observaciones, cada una con su target y
 model.fit(X, y)
