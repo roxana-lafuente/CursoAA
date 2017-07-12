@@ -29,6 +29,9 @@ labels = model.labels_
 plt.scatter(X[u'sepal length (cm)'], X[u'sepal width (cm)'],
             c=labels.astype(np.float), cmap=plt.cm.Oranges)
 
+centroids = model.cluster_centers_.T
+plt.scatter(centroids[0], centroids[1])
+
 # Nombrar los ejes para entender mejor la figura.
 plt.xlabel('Sepal length')
 plt.ylabel('Sepal width')
